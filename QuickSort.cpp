@@ -24,6 +24,28 @@ void input() //membuat prosedur input
     }
 }
 
+// tambahkan setelah while(true) di dalam input()
+    cout << "\n--------------------------" << endl;
+    cout << "\nInputkan Isi elemnt array" << endl;
+    cout << "\n--------------------------" << endl;
+
+    for (int i = 0; i < n; i++) //looping untuk mengisi index array sampai index ke n
+    {
+        cout << "Array index ke- " << i << " : ";
+        cin >> arr[i];
+    }
+}
+
+void swap(int x, int y) //membuat prosedur swap dengan parameter x,y bertipe data integer
+{
+    int temp = arr[x]; //mengisi variabel temporary dengan arr index ke x
+    arr[x] = arr[y];    //mengisi arr index ke x dengan arr index ke y
+    arr[y] = temp;      //mengisi arr index ke y dengan variabel temporary
+    mov_count++;        //increment variabel mov_count
+}
+
+
+
 int main()
 {
     input();
