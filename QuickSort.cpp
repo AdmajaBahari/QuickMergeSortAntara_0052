@@ -44,7 +44,39 @@ void swap(int x, int y) //membuat prosedur swap dengan parameter x,y bertipe dat
     mov_count++;        //increment variabel mov_count
 }
 
+void quicksort(int low, int high) //membuat prosedur quicksort dengan parameter low,high bertipe data integer
+{
+    int temp; //inisialiasi variabel temporary
+    int pivot, i, j; //inisialisasi variabel pivot, i, dan j
 
+    if (low > high) //jika low lebih besar dari high
+    {
+        return; //untuk mengembalikan nilai
+    }
+
+    pivot = arr[low]; //mengisi variabel pivot dengan array index ke low
+    i = low + 1; //mengisi variabel j dengan low + 1
+    j = high; // mengisi variabel j dengan high
+
+    while (i <= j) //looping selama i <= j
+    {
+        //mencari elemnt array yang lebih besar dari pivot
+        while ((arr[i] <= pivot) && (i <= high)) //looping selama arr[i] <= pivot dan i <= high
+        {
+            i++; //increment variabel i
+            cmp_count++; //increment variabel cmp_count
+        }
+        cmp_count++; //increment variabel cmp_count
+
+        //mencari elemnt array yang lebih kecil atau sama dengan pivot
+        while ((arr[j] > pivot) && j >= low)
+        {
+            j--; //decrement variabel j
+            cmp_count++; //increment variabel cmp_count
+        }
+        cmp_count++;  //increment variabel cmp_count
+    }
+}
 
 int main()
 {
