@@ -78,6 +78,21 @@ void quicksort(int low, int high) //membuat prosedur quicksort dengan parameter 
     }
 }
 
+
+// tambahkan di dalam while (i <= j), setelah kedua while loop pencarian di atas
+        if (i < j) //perintah jika posisi i < j
+        {
+            swap(i, j); //tukar element di index i dengan element di index j
+        }
+    }
+    if (low < j) //perintah jika posisi low < j
+    {
+        swap(low, j); //tukar element pivot dengan element di index j
+    }
+    quicksort(low, j - 1);  //pemanggilan rekursive prosedur q_sort untuk mengurutkan sub array sebelah kiri
+    quicksort(j + 1, high); //pemanggilan rekursive prosedur q_sort untuk mengurutkan sub array sebelah kanan
+}
+
 int main()
 {
     input();
