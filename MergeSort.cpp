@@ -24,6 +24,21 @@ void input() {
         cin >> arr[i];
     }
 
+    // create function mergeSort
+    void mergeSort(int low, int high)
+    {
+           if (low >= high) // step 1
+    {
+        return; // step 1.a
+    }
+
+    int mid = (low + high) / 2; // step 2
+
+    // step 3
+    // fungsi rekursi - memanggil diri sendiri
+    mergeSort(low, mid);      // step 3.a
+    mergeSort(mid + 1, high); // step 3.b 
+    }
 
 int main() {
     input();
