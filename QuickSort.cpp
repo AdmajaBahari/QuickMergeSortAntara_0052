@@ -22,9 +22,6 @@ void input() //membuat prosedur input
             cout << "\nMaksimal panjang array adalah 20";
         }
     }
-}
-
-// tambahkan setelah while(true) di dalam input()
     cout << "\n--------------------------" << endl;
     cout << "\nInputkan Isi elemnt array" << endl;
     cout << "\n--------------------------" << endl;
@@ -75,11 +72,7 @@ void quicksort(int low, int high) //membuat prosedur quicksort dengan parameter 
             cmp_count++; //increment variabel cmp_count
         }
         cmp_count++;  //increment variabel cmp_count
-    }
-}
 
-
-// tambahkan di dalam while (i <= j), setelah kedua while loop pencarian di atas
         if (i < j) //perintah jika posisi i < j
         {
             swap(i, j); //tukar element di index i dengan element di index j
@@ -93,7 +86,38 @@ void quicksort(int low, int high) //membuat prosedur quicksort dengan parameter 
     quicksort(j + 1, high); //pemanggilan rekursive prosedur q_sort untuk mengurutkan sub array sebelah kanan
 }
 
+void output() //pembuatan prosedur output
+{
+    cout << "\n--------------------------" << endl;
+    cout << "\nInputkan Isi elemnt array" << endl;
+    cout << "\n--------------------------" << endl;
+
+    for (int i = 0; i < n; i++) //loopin untuk menampilkan elemnt array yang telah di urutkan
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\n\njumlah perbandingan : " << cmp_count << endl;
+    cout << "Jumlah Pergerakan Data : " << mov_count << endl;
+}
+
 int main()
 {
-    input();
+    char ch;
+
+    do
+    {
+        input();
+        quicksort(0, n - 1);
+        output();
+        cout << "\n\nIngin Melanjutkan? (y/t) : ";
+        cin >> ch;
+        if (ch == 't' || ch == 'T')
+        {
+            break;
+        }
+        system("pause");
+        system("cls");
+    } while (true);
+    return 0;
 }
